@@ -19,7 +19,9 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
+
+    //In build auth provider , enable it if not using default
+   /* @Bean
     UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
         UserDetails userDetails = User.withUsername("Alice")
@@ -27,7 +29,7 @@ public class SecurityConfig {
                 .authorities("read").build();
         inMemoryUserDetailsManager.createUser(userDetails);
         return inMemoryUserDetailsManager;
-    }
+    }*/
 
     @Bean
     SecurityFilterChain filterRequestChain(HttpSecurity httpSecurity) throws Exception {
